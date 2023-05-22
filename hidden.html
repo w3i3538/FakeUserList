@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <title>FakeUserList</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Fake User List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favorite.html">Favorite</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="hidden.html">Hidden</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="banned.html">Banned</a>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User Per Page
+          </a>
+          <ul class="dropdown-menu" id="userperpage" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" id="userperpage8" href="#">8</a></li>
+            <li><a class="dropdown-item" id="userperpage12" href="#">12</a></li>
+            <li><a class="dropdown-item" id="userperpage20" href="#">20</a></li>
+            <li><a class="dropdown-item" id="userperpage40" href="#">40</a></li>
+          </ul>
+        </li>
+        </ul>
+        <!-- search -->
+        <form class="d-flex" id="search-form">
+          <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search" oninput="search()">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- userlist -->
+  <div class="container mt-5">
+    <div class="row" id="data-panel">
+      <!--渲染個人名單-->
+    </div>
+  </div>
+  
+  <!-- paginator -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center" id="paginator">
+      <!-- 渲染分頁 -->
+    </ul>
+  </nav>
+  
+  <!--modal-->
+  <div class="modal fade" id="card-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="card-modal-title">Name title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="card-modal-body">
+          <div class="row">
+            <div class="col-sm-5" id="card-modal-image">
+              <img src="" alt="card-poster" class="image-fruid">
+            </div>
+            <div class="col-sm-5" id="card-modal-info">
+              <!--渲染分頁內容-->
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--引用axios-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!--載入Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="./hidden.js"></script>
+  
+</body>
+
+</html>
